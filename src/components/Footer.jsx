@@ -127,7 +127,7 @@ const Footer = () => {
                 <FaEnvelope className="text-blue-400 mt-2 flex-shrink-0 text-xl" />
                 <div>
                   <span className="text-gray-300 text-sm">Email</span>
-                  <div className="text-white font-medium text-lg">impact_designassociates@rediffmail.com</div>
+                  <div className="text-white font-medium text-m md:text-s lg:text-s">impact_designassociates@rediffmail.com</div>
                 </div>
               </motion.li>
               <motion.li 
@@ -162,6 +162,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="pl-8"
           >
             <h3 className="text-2xl font-heading font-semibold mb-8 text-white border-b border-blue-500/30 pb-3">
               Services
