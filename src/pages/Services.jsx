@@ -13,19 +13,20 @@ import {
   FaVrCardboard,
   FaLightbulb,
   FaTools,
+  FaIndustry,
 } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const serviceItems = [
-  {
-    icon: <FaLaptopHouse className="text-white text-4xl mb-4" />,
-    title: "Virtual Architecture",
-    description:
-      "Immersive 3D virtual tours that bring your projects to life before they're built.",
-    gradient: "from-blue-400 to-blue-600",
-    delay: 0.1,
-  },
+  // {
+  //   icon: <FaLaptopHouse className="text-white text-4xl mb-4" />,
+  //   title: "Virtual Architecture",
+  //   description:
+  //     "Immersive 3D virtual tours that bring your projects to life before they're built.",
+  //   gradient: "from-blue-400 to-blue-600",
+  //   delay: 0.1,
+  // },
   {
     icon: <FaCogs className="text-white text-4xl mb-4" />,
     title: "Engineering Integration",
@@ -50,22 +51,22 @@ const serviceItems = [
     gradient: "from-blue-600 to-blue-800",
     delay: 0.4,
   },
-  {
-    icon: <FaRobot className="text-white text-4xl mb-4" />,
-    title: "AI-Driven Design",
-    description:
-      "Utilizing artificial intelligence to optimize planning and layout decisions.",
-    gradient: "from-blue-400 to-blue-700",
-    delay: 0.5,
-  },
-  {
-    icon: <FaVrCardboard className="text-white text-4xl mb-4" />,
-    title: "Virtual Reality Walkthroughs",
-    description:
-      "Step inside your project with immersive VR experiences.",
-    gradient: "from-blue-300 to-blue-600",
-    delay: 0.6,
-  },
+  // {
+  //   icon: <FaRobot className="text-white text-4xl mb-4" />,
+  //   title: "AI-Driven Design",
+  //   description:
+  //     "Utilizing artificial intelligence to optimize planning and layout decisions.",
+  //   gradient: "from-blue-400 to-blue-700",
+  //   delay: 0.5,
+  // },
+  // {
+  //   icon: <FaVrCardboard className="text-white text-4xl mb-4" />,
+  //   title: "Virtual Reality Walkthroughs",
+  //   description:
+  //     "Step inside your project with immersive VR experiences.",
+  //   gradient: "from-blue-300 to-blue-600",
+  //   delay: 0.6,
+  // },
   {
     icon: <FaLightbulb className="text-white text-4xl mb-4" />,
     title: "Sustainable Innovation",
@@ -81,6 +82,14 @@ const serviceItems = [
       "Supporting your technical teams with architectural and structural insights.",
     gradient: "from-blue-600 to-blue-900",
     delay: 0.8,
+  },
+  {
+    icon: <FaIndustry className="text-white text-4xl mb-4" />,
+    title: "Industrial Projects",
+    description:
+      "Robust and scalable solutions tailored for industrial and commercial needs.",
+    gradient: "from-gray-700 to-gray-900",
+    delay: 0.5,
   },
 ];
 
@@ -115,7 +124,8 @@ const Services = () => {
             Designing the Future of Architecture & Innovation
           </h1>
           <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-            Discover how we blend creative design, advanced technology, and intelligent planning to turn concepts into reality.
+            Discover how we blend creative design, advanced technology, and
+            intelligent planning to turn concepts into reality.
           </p>
         </motion.div>
       </section>
@@ -219,7 +229,8 @@ const Services = () => {
             Ready to Build Something Amazing?
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Let's collaborate on your next big idea. Get in touch with us to explore possibilities.
+            Let's collaborate on your next big idea. Get in touch with us to
+            explore possibilities.
           </p>
           <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
             Contact Us

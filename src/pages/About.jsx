@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaUserTie,
@@ -73,7 +74,8 @@ const About = () => {
             Crafting the Blueprint of Tomorrow
           </h1>
           <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-            From iconic buildings to immersive environments, we lead with creativity and build with purpose.
+            From iconic buildings to immersive environments, we lead with
+            creativity and build with purpose.
           </p>
         </motion.div>
       </section>
@@ -89,12 +91,18 @@ const About = () => {
             variants={fadeUp}
             className="flex flex-col md:flex-row gap-8 items-center"
           >
-            <div className={`flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-glow`}>
+            <div
+              className={`flex-shrink-0 w-24 h-24 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-glow`}
+            >
               {item.icon}
             </div>
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-2 text-black">{item.title}</h3>
-              <p className="text-gray-600 text-lg max-w-2xl">{item.description}</p>
+              <h3 className="text-2xl font-semibold mb-2 text-black">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-lg max-w-2xl">
+                {item.description}
+              </p>
             </div>
           </motion.div>
         ))}
@@ -109,11 +117,15 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-3xl font-bold text-blue-700 mb-6">Our Vision</h3>
+            <h3 className="text-3xl font-bold text-blue-700 mb-6">
+              Our Vision
+            </h3>
             <ul className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <li>✓ Cultivate design excellence across diverse scales</li>
               <li>✓ Elevate human experience through spatial intelligence</li>
-              <li>✓ Innovate responsibly with digital and ecological foresight</li>
+              <li>
+                ✓ Innovate responsibly with digital and ecological foresight
+              </li>
               <li>✓ Inspire progress with purpose-driven architecture</li>
             </ul>
           </motion.div>
@@ -144,11 +156,14 @@ const About = () => {
             Partner with Visionaries
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Collaborate with a firm that blends creativity, precision, and innovation to bring bold ideas to life.
+            Collaborate with a firm that blends creativity, precision, and
+            innovation to bring bold ideas to life.
           </p>
-          <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
-            Get in Touch
-          </button>
+          <Link to="/contact">
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
+              Get in Touch
+            </button>
+          </Link>
         </motion.div>
       </section>
 

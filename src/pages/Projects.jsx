@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaSearch, FaFilter, FaEye, FaHeart, FaShare, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  FaSearch,
+  FaFilter,
+  FaEye,
+  FaHeart,
+  FaShare,
+  FaArrowRight,
+} from "react-icons/fa";
 import projects from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/Navbar";
@@ -29,19 +37,29 @@ const Projects = () => {
   // Get a default category based on project name or use a fallback
   const getProjectCategory = (projectName) => {
     const name = projectName.toLowerCase();
-    if (name.includes('elite') || name.includes('residence') || name.includes('home')) {
-      return 'residential';
-    } else if (name.includes('palms') || name.includes('center') || name.includes('office')) {
-      return 'commercial';
+    if (
+      name.includes("elite") ||
+      name.includes("residence") ||
+      name.includes("home")
+    ) {
+      return "residential";
+    } else if (
+      name.includes("palms") ||
+      name.includes("center") ||
+      name.includes("office")
+    ) {
+      return "commercial";
     } else {
-      return 'residential'; // default fallback
+      return "residential"; // default fallback
     }
   };
 
   const filteredProjects = projects
-    .filter(project => 
-      project.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedCategory === "all" || getProjectCategory(project.name) === selectedCategory)
+    .filter(
+      (project) =>
+        project.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (selectedCategory === "all" ||
+          getProjectCategory(project.name) === selectedCategory)
     )
     .sort((a, b) => {
       switch (sortBy) {
@@ -52,7 +70,9 @@ const Projects = () => {
         case "name":
           return a.name.localeCompare(b.name);
         case "category":
-          return getProjectCategory(a.name).localeCompare(getProjectCategory(b.name));
+          return getProjectCategory(a.name).localeCompare(
+            getProjectCategory(b.name)
+          );
         default:
           return 0;
       }
@@ -61,7 +81,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-50 via-white to-brand-50/30 overflow-hidden">
         {/* Background decoration */}
@@ -90,7 +110,8 @@ const Projects = () => {
               Our Projects
             </h1>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              Discover our portfolio of innovative architectural designs that transform spaces and inspire communities.
+              Discover our portfolio of innovative architectural designs that
+              transform spaces and inspire communities.
             </p>
             <div className="w-32 h-1 bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 mx-auto mt-8 rounded-full shadow-glow"></div>
           </motion.div>
@@ -123,7 +144,7 @@ const Projects = () => {
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 border border-neutral-200 rounded-xl focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all duration-300 appearance-none bg-white"
                 >
-                  {categories.map(category => (
+                  {categories.map((category) => (
                     <option key={category.id} value={category.id}>
                       {category.name}
                     </option>
@@ -139,7 +160,7 @@ const Projects = () => {
                   onChange={(e) => setSortBy(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 border border-neutral-200 rounded-xl focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all duration-300 appearance-none bg-white"
                 >
-                  {sortOptions.map(option => (
+                  {sortOptions.map((option) => (
                     <option key={option.id} value={option.id}>
                       {option.name}
                     </option>
@@ -186,7 +207,8 @@ const Projects = () => {
               No Projects Found
             </h3>
             <p className="text-neutral-600 max-w-md mx-auto">
-              Try adjusting your search criteria or browse all our projects to find what you're looking for.
+              Try adjusting your search criteria or browse all our projects to
+              find what you're looking for.
             </p>
           </motion.div>
         )}
@@ -204,7 +226,7 @@ const Projects = () => {
               { number: projects.length, label: "Total Projects" },
               { number: categories.length - 1, label: "Categories" },
               { number: "150+", label: "Happy Clients" },
-              { number: "25+", label: "Years Experience" }
+              { number: "25+", label: "Years Experience" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -214,7 +236,9 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-white/80 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -235,15 +259,18 @@ const Projects = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
-            Let's discuss how we can bring your architectural vision to life with our expertise and innovative design solutions.
+            Let's discuss how we can bring your architectural vision to life
+            with our expertise and innovative design solutions.
           </p>
-          <motion.button
-            className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Project
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-blue-600 px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Project
+            </motion.button>
+          </Link>
         </motion.div>
       </section>
 

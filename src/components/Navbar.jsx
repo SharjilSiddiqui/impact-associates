@@ -114,13 +114,15 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <motion.button
-            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Quote
-          </motion.button>
+          <Link to="/quote">
+            <motion.button
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Quote
+            </motion.button>
+          </Link>
         </div>
 
         {/* Mobile Menu Icon */}

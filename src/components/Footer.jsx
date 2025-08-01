@@ -173,7 +173,8 @@ const Footer = () => {
                 "Commercial Spaces", 
                 "Urban Planning",
                 "Interior Concepts",
-                "Project Management"
+                "Project Management",
+                "Industrial Projects"
               ].map((service, index) => (
                 <motion.li 
                   key={service}
@@ -187,7 +188,7 @@ const Footer = () => {
                   }}
                   whileHover={{ scale: 1.02, x: 5 }}
                 >
-                  <span className="text-gray-300 hover:text-blue-300 transition-colors duration-300 cursor-pointer text-lg">
+                  <span className="text-gray-300 hover:text-blue-300 transition-colors duration-300 text-lg">
                     {service}
                   </span>
                 </motion.li>
