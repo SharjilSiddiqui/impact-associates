@@ -122,7 +122,7 @@ const ProjectDetail = () => {
           >
             <div>
               <div className="mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-600 shadow-glow">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-blue-600 bg-gradient-to-r from-brand-500 to-brand-600 shadow-glow">
                   {projectCategory.charAt(0).toUpperCase() + projectCategory.slice(1)}
                 </span>
               </div>
@@ -151,7 +151,7 @@ const ProjectDetail = () => {
                     className="text-center"
                   >
                     <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-glow">
-                      <stat.icon className="text-white text-lg" />
+                      <stat.icon className="text-blue-600 text-lg" />
                     </div>
                     <div className="text-sm text-neutral-500 mb-1">{stat.label}</div>
                     <div className="font-semibold text-black">{stat.value}</div>
@@ -160,7 +160,7 @@ const ProjectDetail = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-4">
+              {/* <div className="flex flex-wrap gap-4">
                 <motion.button
                   onClick={() => setIsLiked(!isLiked)}
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                   <FaDownload />
                   Download PDF
                 </motion.button>
-              </div>
+              </div> */}
             </div>
 
             {/* Main Image */}
@@ -233,7 +233,7 @@ const ProjectDetail = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-glow"
+                    ? "bg-gradient-to-r from-brand-500 to-brand-600 text-blue-600 shadow-glow"
                     : "text-neutral-600 hover:text-black hover:bg-neutral-100"
                 }`}
               >
