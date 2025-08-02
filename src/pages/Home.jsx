@@ -276,7 +276,7 @@ const Home = () => {
               >
                 {[
                   {
-                    number: "150+",
+                    number: "450+",
                     label: "Projects Completed",
                     icon: <FaShieldAlt />,
                   },
@@ -286,7 +286,7 @@ const Home = () => {
                     icon: <FaAward />,
                   },
                   {
-                    number: "98%",
+                    number: "100%",
                     label: "Client Satisfaction",
                     icon: <FaStar />,
                   },
@@ -603,13 +603,15 @@ const Home = () => {
                 values quality, innovation, and vision.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <motion.button
-                  className="bg-white text-blue-600 font-semibold px-10 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[240px] text-lg btn-premium"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Start Your Project
-                </motion.button>
+                <Link to="/contact">
+                  <motion.button
+                    className="bg-white text-blue-600 font-semibold px-10 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[240px] text-lg btn-premium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Start Your Project
+                  </motion.button>
+                </Link>
                 <motion.button
                   className="border-2 border-white/30 text-white px-10 py-5 rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105 min-w-[240px] text-lg glass-button"
                   whileHover={{ scale: 1.05 }}
