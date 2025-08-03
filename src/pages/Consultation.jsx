@@ -22,19 +22,19 @@ const cards = [
     icon: <FaVideo size={28} />,
     title: "Zoom Consultation",
     description: "Book a virtual design consultation via Zoom.",
-    link: "https://calendly.com/sharjilsiddiqui719/zoom?preview_source=et_card&month=2025-08",
+    link: "https://calendly.com/h-impactdesign/zoom-meet",
   },
   {
     icon: <FaPhoneAlt size={28} />,
     title: "Phone Consultation",
     description: "Have a quick discussion over a phone call.",
-    link: "https://calendly.com/sharjilsiddiqui719/phone-call?preview_source=et_card&month=2025-08",
+    link: "https://calendly.com/h-impactdesign/30min",
   },
   {
     icon: <FaMapMarkerAlt size={28} />,
     title: "In-Person Meeting",
     description: "Visit our office for a face-to-face meeting.",
-    link: "https://calendly.com/sharjilsiddiqui719/30min?preview_source=et_card&month=2025-08",
+    link: "https://calendly.com/h-impactdesign/in-person",
   },
 ];
 

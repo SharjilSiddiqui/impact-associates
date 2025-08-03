@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -23,13 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  // Mouse following effect removed
 
   const navLinks = [
     { to: "/", label: "Home" },
@@ -49,15 +42,7 @@ export default function Navbar() {
           : "backdrop-blur-xl bg-white/90 shadow-md border-b border-white/20"
       }`}
     >
-      {/* Dynamic background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 pointer-events-none"
-        animate={{
-          x: mousePosition.x - 400,
-          y: mousePosition.y - 20,
-        }}
-        transition={{ type: "spring", stiffness: 100, damping: 30 }}
-      />
+      {/* Dynamic background removed */}
 
       <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative z-10">
         {/* Brand */}

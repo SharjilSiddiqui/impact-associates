@@ -92,15 +92,8 @@ const Home = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  // Mouse following effect removed
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -185,15 +178,7 @@ const Home = () => {
             />
           </div>
 
-          {/* Mouse-following gradient */}
-          <motion.div
-            className="absolute w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-3xl pointer-events-none"
-            animate={{
-              x: mousePosition.x - 192,
-              y: mousePosition.y - 192,
-            }}
-            transition={{ type: "spring", stiffness: 50, damping: 20 }}
-          />
+          {/* Mouse-following gradient removed */}
 
           {/* Glass Morphism Content Container */}
           <motion.div
