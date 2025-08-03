@@ -112,11 +112,27 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
+        {/* CTA Buttons */}
+        <div className="hidden md:flex space-x-4">
+          <Link to="/consultation">
+            <motion.button
+              className={`px-6 py-2 rounded-full transition-all font-medium border border-blue-600 cursor-pointer ${
+                isHome
+                  ? isScrolled
+                    ? "text-blue-600 bg-transparent hover:bg-white hover:text-blue-600"
+                    : "text-white bg-transparent hover:bg-white hover:text-blue-600"
+                  : "text-blue-600 bg-transparent hover:bg-blue-50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Schedule Consultation
+            </motion.button>
+          </Link>
+
           <Link to="/quote">
             <motion.button
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 font-medium"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-transform hover:scale-105 font-medium cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -151,7 +167,7 @@ export default function Navbar() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 w-80 h-220 z-[99] bg-white/95 backdrop-blur-lg shadow-2xl border-l border-white/30"
+            className="fixed top-0 right-0 w-80 h-300 z-[99] bg-white/95 backdrop-blur-lg shadow-2xl border-l border-white/30"
           >
             <div className="flex justify-between items-center p-6 border-b">
               <h3 className="text-lg font-semibold text-black">Menu</h3>
@@ -182,12 +198,23 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              <motion.button
-                className="mt-6 w-full bg-blue-600 text-white py-3 rounded-xl shadow-md hover:shadow-lg transition-transform hover:scale-105"
-                whileHover={{ scale: 1.02 }}
-              >
-                Get Quote
-              </motion.button>
+              <Link to="/consultation" onClick={() => setIsOpen(false)}>
+                <motion.button
+                  className="w-full bg-white text-blue-600 border border-blue-500 py-3 rounded-xl shadow hover:bg-blue-50 transition-all font-medium mb-3"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  Schedule Consultation
+                </motion.button>
+              </Link>
+
+              <Link to="/quote" onClick={() => setIsOpen(false)}>
+                <motion.button
+                  className="w-full bg-blue-600 text-white py-3 rounded-xl shadow-md hover:shadow-lg transition-transform hover:scale-105"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  Get Quote
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}

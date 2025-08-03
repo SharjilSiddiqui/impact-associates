@@ -605,20 +605,22 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link to="/contact">
                   <motion.button
-                    className="bg-white text-blue-600 font-semibold px-10 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[240px] text-lg btn-premium"
+                    className="bg-white text-blue-600 font-semibold px-10 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[240px] text-lg btn-premium cursor-pointer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Start Your Project
                   </motion.button>
                 </Link>
+                <Link to="/consultation">
                 <motion.button
-                  className="border-2 border-white/30 text-white px-10 py-5 rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105 min-w-[240px] text-lg glass-button"
+                  className="border-2 border-white/30 text-white px-10 py-5 rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105 min-w-[240px] text-lg glass-button cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Schedule Consultation
                 </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>

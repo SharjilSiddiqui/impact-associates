@@ -135,11 +135,11 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <img
+            {/* <img
               src="/illustrations/vision-graphic.svg"
               alt="Vision Illustration"
               className="w-full rounded-xl shadow-lg"
-            />
+            /> */}
           </motion.div>
         </div>
       </section>
