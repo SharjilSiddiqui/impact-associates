@@ -17,42 +17,35 @@ const fadeUp = {
 };
 
 const Quote = () => {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
     projectType: "",
-    area: "",
-    amenities: [],
+    location: "",
+    budget: "",
+    message: "",
   });
 
-  const [quote, setQuote] = useState(null);
-
-  const amenitiesOptions = [
-    "Smart Home",
-    "Solar Panels",
-    "Swimming Pool",
-    "Landscaping",
-    "Premium Materials",
-  ];
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      const updated = checked
-        ? [...formData.amenities, value]
-        : formData.amenities.filter((a) => a !== value);
-      setFormData({ ...formData, amenities: updated });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const calculateQuote = () => {
-    const baseRate = 1500; // per sq.ft.
-    const area = parseFloat(formData.area) || 0;
-    const amenityCost = formData.amenities.length * 100000;
-    const estimated = area * baseRate + amenityCost;
-    setQuote(estimated);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch("https://formspree.io/f/xqalykal", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: new FormData(e.target),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -68,104 +61,100 @@ const Quote = () => {
           variants={fadeUp}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gradient-animated mb-4">
-            Estimate Your Dream Project
+            Request a Custom Quote
           </h1>
           <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-            Get an instant quote based on your project preferences.
+            Let us know your requirements — we’ll get back with a tailored proposal.
           </p>
         </motion.div>
       </section>
 
-      {/* Quote Form */}
+      {/* Form */}
       <section className="max-w-4xl mx-auto py-20 px-6">
-        <motion.form
-          onSubmit={(e) => {
-            e.preventDefault();
-            calculateQuote();
-          }}
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="grid grid-cols-1 gap-6 bg-blue-50 p-8 rounded-xl shadow-lg"
+          className="bg-blue-50 p-8 rounded-xl shadow-lg"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <select
-              name="projectType"
-              value={formData.projectType}
-              onChange={handleChange}
-              required
-              className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="">Select Project Type</option>
-              <option value="Residential">Residential</option>
-              <option value="Commercial">Commercial</option>
-              <option value="Mixed Use">Mixed Use</option>
-            </select>
-
-            <input
-              type="number"
-              name="area"
-              required
-              placeholder="Total Area (in sq.ft.)"
-              value={formData.area}
-              onChange={handleChange}
-              className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div>
-            <label className="font-semibold block mb-2">Select Amenities</label>
-            <div className="grid md:grid-cols-3 gap-4">
-              {amenitiesOptions.map((item) => (
-                <label key={item} className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    value={item}
-                    checked={formData.amenities.includes(item)}
-                    onChange={handleChange}
-                    className="accent-blue-600"
-                  />
-                  <span>{item}</span>
-                </label>
-              ))}
+          {submitted ? (
+            <div className="text-center text-green-600 text-xl font-semibold">
+              Thank you! We’ve received your request.
             </div>
-          </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  name="name"
+                  placeholder="Your Name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
 
-          <button
-            type="submit"
-            className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all"
-          >
-            Get Quote Estimate
-          </button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  name="location"
+                  placeholder="Project Location"
+                  value={form.location}
+                  onChange={handleChange}
+                  className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
 
-          {quote && (
-            <p className="text-blue-700 font-medium text-center pt-2 text-xl">
-              Estimated Cost: ₹{quote.toLocaleString("en-IN")}
-            </p>
+              <input
+                name="projectType"
+                placeholder="Project Type (e.g. Residential, Commercial)"
+                value={form.projectType}
+                onChange={handleChange}
+                className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <input
+                name="budget"
+                placeholder="Estimated Budget (INR)"
+                value={form.budget}
+                onChange={handleChange}
+                className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Describe your project requirements..."
+                value={form.message}
+                onChange={handleChange}
+                rows={4}
+                className="p-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all"
+              >
+                Submit Quote Request
+              </button>
+            </form>
           )}
-        </motion.form>
+        </motion.div>
       </section>
 
       <Footer />
