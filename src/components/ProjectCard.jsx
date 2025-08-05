@@ -1,36 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaEye, FaHeart, FaShare, FaMapMarkerAlt, FaCalendarAlt, FaBuilding } from "react-icons/fa";
+import { FaEye, FaMapMarkerAlt, FaCalendarAlt, FaBuilding, FaHeart } from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
-  const [isLiked, setIsLiked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
-  const handleLike = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsLiked(!isLiked);
-  };
-
-  const handleShare = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Share functionality would go here
-    console.log("Share project:", project.name);
-  };
-
-  // Get a default category based on project name or use a fallback
-  const getProjectCategory = (projectName) => {
-    const name = projectName.toLowerCase();
-    if (name.includes('elite') || name.includes('residence') || name.includes('home')) {
-      return 'residential';
-    } else if (name.includes('palms') || name.includes('center') || name.includes('office')) {
-      return 'commercial';
-    } else {
-      return 'residential'; // default fallback
-    }
-  };
 
   const getCategoryColor = (category) => {
     const colors = {
@@ -44,15 +18,15 @@ const ProjectCard = ({ project }) => {
 
   const getCategoryIcon = (category) => {
     const icons = {
-      residential: "🏠",
-      commercial: "🏢",
-      interior: "🎨",
-      urban: "🏙️",
+      Residential: "🏠",
+      Commercial: "🏢",
+      Interior: "🎨",
+      Urban: "🏙️",
     };
     return icons[category] || "🏗️";
   };
 
-  const projectCategory = getProjectCategory(project.name);
+   const projectCategory = project.category || "residential"; // fallback if not provided
 
   return (
     <motion.div
@@ -72,41 +46,20 @@ const ProjectCard = ({ project }) => {
           className="w-full h-full object-cover transition-transform duration-700"
           whileHover={{ scale: 1.1 }}
         />
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Category Badge */}
         <div className="absolute top-4 left-4">
-          <span className={`inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${getCategoryColor(projectCategory)} shadow-glow`}>
+          <span
+            className={`inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${getCategoryColor(
+              projectCategory
+            )} shadow-glow`}
+          >
             <span>{getCategoryIcon(projectCategory)}</span>
             {projectCategory.charAt(0).toUpperCase() + projectCategory.slice(1)}
           </span>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="absolute top-4 right-4 flex gap-2">
-          <motion.button
-            onClick={handleLike}
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-              isLiked 
-                ? "bg-red-500 text-white shadow-glow" 
-                : "bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
-            }`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaHeart className={`text-sm ${isLiked ? "fill-current" : ""}`} />
-          </motion.button>
-          
-          <motion.button
-            onClick={handleShare}
-            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 flex items-center justify-center transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaShare className="text-sm" />
-          </motion.button>
         </div>
 
         {/* View Details Button */}
@@ -198,16 +151,18 @@ const ProjectCard = ({ project }) => {
         {/* Status Badge */}
         {project.status && (
           <div className="flex justify-between items-center">
-            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
-              project.status === 'completed' 
-                ? 'bg-green-100 text-green-700' 
-                : project.status === 'in-progress'
-                ? 'bg-yellow-100 text-yellow-700'
-                : 'bg-blue-100 text-blue-700'
-            }`}>
+            <span
+              className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                project.status === "completed"
+                  ? "bg-green-100 text-green-700"
+                  : project.status === "in-progress"
+                  ? "bg-yellow-100 text-yellow-700"
+                  : "bg-blue-100 text-blue-700"
+              }`}
+            >
               {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
             </span>
-            
+
             {/* Client Rating */}
             {project.rating && (
               <div className="flex items-center gap-1">
@@ -215,8 +170,8 @@ const ProjectCard = ({ project }) => {
                   <FaHeart
                     key={i}
                     className={`w-3 h-3 ${
-                      i < project.rating 
-                        ? "text-yellow-400 fill-current" 
+                      i < project.rating
+                        ? "text-yellow-400 fill-current"
                         : "text-neutral-300"
                     }`}
                   />

@@ -85,17 +85,28 @@ const Projects = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-50 via-white to-brand-50/30 overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-500/5 to-brand-600/5"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Background */}
+          <div
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(30,58,138,0.05) 100%)",
+            }}
+          ></div>
+
+          {/* Top-Right Rotating Circle */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute top-20 right-20 w-32 h-32 border border-brand-500/20 rounded-full"
+            className="absolute top-20 right-20 w-32 h-32 border border-[#3B82F6]/20 rounded-full"
           />
+
+          {/* Bottom-Left Rotating Circle */}
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-20 left-20 w-24 h-24 border border-brand-600/20 rounded-full"
+            className="absolute bottom-20 left-20 w-24 h-24 border border-[#1E3A8A]/20 rounded-full"
           />
         </div>
 
@@ -106,9 +117,10 @@ const Projects = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 bg-gradient-to-r from-black via-brand-600 to-black bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 bg-gradient-to-r from-black via-brand-600 to-black bg-clip-text text-transparent leading-tight pb-1">
               Our Projects
             </h1>
+
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
               Discover our portfolio of innovative architectural designs that
               transform spaces and inspire communities.

@@ -234,7 +234,7 @@ const Home = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="relative z-10 flex items-center justify-center gap-2 cursor-pointer">
                       <FaRocket className="animate-bounce" />
                       Explore Our Work
                     </span>

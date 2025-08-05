@@ -54,6 +54,7 @@ const projects = [
     id: "1",
     slug: "Sunrise Elite",
     name: "Sunrise Elite",
+    category: "Residential",
     location:
       "Opp. Kohinoor Lawns, Beside Green Valley, Rauza Bagh, Aurangabad",
     image: SunriseElite,
@@ -132,6 +133,7 @@ const projects = [
     id: "2",
     slug: "PM Builder",
     name: "PM Builder",
+    category: "Residential",
     location: "Kohinoor Colony, Aurangabad",
     image: PMBuilder,
     description:
@@ -171,6 +173,7 @@ const projects = [
     id: "3",
     slug: "Patel Palms",
     name: "Patel Palms",
+    category: "Residential",
     location: "Downtown, New York",
     image: PatelPalms,
     description:
