@@ -1,22 +1,42 @@
 import SunriseElite from "../assets/sunrise elite/Sunrice Elite furant view.jpg";
-import SunriseElite1 from "../assets/sunrise elite/Sunrice Elite 2 BHK.png";
-import SunriseElite2 from "../assets/sunrise elite/Sunrice Elite 3 BHK OND OPTION.png";
-import SunriseElite3 from "../assets/sunrise elite/Sunrice Elite 3BHK.png";
-import SunriseElite4 from "../assets/sunrise elite/Sunrice Elite 4 BHK.png";
-import SunriseElite5 from "../assets/sunrise elite/Sunrice Elite back side view.jpg";
-import SunriseElite6 from "../assets/sunrise elite/Sunrice Elite Duplex 1st FLOOR.png";
-import SunriseElite7 from "../assets/sunrise elite/Sunrice Elite Duplex GROUND FLOR.png";
-import SunriseElite8 from "../assets/sunrise elite/Sunrice Elite floor Plan.jpg";
-import SunriseElite9 from "../assets/sunrise elite/Sunrice Elite Night view.jpg";
-import SunriseElite10 from "../assets/sunrise elite/Sunrice Elite sky view.jpg";
-import SunriseElite11 from "../assets/sunrise elite/Sunrice Elite terrace.jpg";
-import SunriseElite12 from "../assets/sunrise elite/Sunrice Elite terrace 01.jpg";
-import SunriseElite13 from "../assets/sunrise elite/Sunrice Elite terrace 02.jpg";
+import SunriseElite1 from "../assets/sunrise elite/Sunrice Elite back side view.jpg";
+import SunriseElite2 from "../assets/sunrise elite/Sunrice Elite floor Plan.jpg";
+import SunriseElite3 from "../assets/sunrise elite/Sunrice Elite Night view.jpg";
+import SunriseElite4 from "../assets/sunrise elite/Sunrice Elite sky view.jpg";
+import SunriseElite5 from "../assets/sunrise elite/Sunrice Elite terrace.jpg";
+import SunriseElite6 from "../assets/sunrise elite/Sunrice Elite terrace 01.jpg";
+import SunriseElite7 from "../assets/sunrise elite/Sunrice Elite terrace 02.jpg";
+import SunriseEliteVideo from "../assets/sunrise elite/4K Final Export send.mp4";
 
-import PMBuilder from "../assets/pm builder/pm apartment 01.jpg";
-
+import GurjasPark from "../assets/pm builder/pm apartment 01.jpg";
+import GurjasPark1 from "../assets/pm builder/pm builder changes.jpg";
+import GurjasPark2 from "../assets/pm builder/pm rowhouses 02.jpg";
 
 import PatelPalms from "../assets/patel palms/patel palm row house.jpg";
+import PatelPalms1 from "../assets/patel palms/PATEL_PALMS_PHASE_3-1.jpg";
+import PatelPalms2 from "../assets/patel palms/PATEL_PALMS_PHASE_3-2.jpg";
+import PatelPalms3 from "../assets/patel palms/PATEL_PALMS_PHASE_3-3.jpg";
+
+import KohinoorCollege from "../assets/Kohinoor college/KOHINOOR_COLLEGE AT CHOWKA.jpg";
+import KohinoorCollege1 from "../assets/Kohinoor college/gate1-1 (1).jpg";
+import KohinoorCollege2 from "../assets/Kohinoor college/kohinoor college building at khuldabad.jpg";
+
+import SeemaKhanHospital from "../assets/Citizen hospital/PROPOSED HOSPTAL BUILDING FOR Dr.Seema MAAM AT SHABAZAR AURANGABAD.jpg";
+import SeemaKhanHospital1 from "../assets/Citizen hospital/PROPOSED HOSPTAL BUILDING FOR Dr.Seema MAAM AT SHABAZAR AURANGABAD--.jpg";
+
+import AtharvaJagganath from "../assets/Atharva Jagganath/PROPOSED BUILDING FOR MR.RAVI SIR AT USMANPURA.jpeg";
+import AtharvaJagganath1 from "../assets/Atharva Jagganath/PROPOSED BUILDING FOR MR.RAVI SIR AT USMANPURA...jpeg";
+
+import AakarBuilders from "../assets/Aakar builders and developers/old phase2 BTYPE.jpg";
+import AakarBuilders1 from "../assets/Aakar builders and developers/layout ariel5.jpg";
+import AakarBuilders2 from "../assets/Aakar builders and developers/OLD ELEVATION.jpeg";
+import AakarBuilders3 from "../assets/Aakar builders and developers/OLD Elevation2.jpg";
+import AakarBuilders4 from "../assets/Aakar builders and developers/OLD pase 1 TYPE D.jpg";
+import AakarBuilders5 from "../assets/Aakar builders and developers/phase 1 a tpye.jpg";
+import AakarBuilders6 from "../assets/Aakar builders and developers/phase 1 b type.jpg";
+import AakarBuilders7 from "../assets/Aakar builders and developers/phase1 e type.jpg";
+import AakarBuilders8 from "../assets/Aakar builders and developers/phase2 a type1 EVENING(a).jpg";
+import AakarBuildersVideo from "../assets/Aakar builders and developers/aakar.mp4";
 
 const projects = [
   //   {
@@ -52,66 +72,66 @@ const projects = [
 
   {
     id: "1",
-    slug: "Sunrise Elite",
+    slug: "sunrise-elite",
     name: "Sunrise Elite",
     category: "Residential",
     location:
       "Opp. Kohinoor Lawns, Beside Green Valley, Rauza Bagh, Aurangabad",
     image: SunriseElite,
     description:
-      "Luxurious 2, 3 & 4 BHK masterpiece residences with duplex options, located in the prime Kohinoor Colony of Aurangabad. Designed with smart features, lush amenities, and a serene community vibe.",
+      "A landmark in Rauzabagh featuring 16 luxury 2BHK, 32 spacious 3BHK, and 16 grand 4BHK residences. Spanning 25,000 sq ft, Sunrise Elite blends premium architecture, green landscapes, and world-class amenities in the heart of Aurangabad.",
+    longDescription:
+      "Sunrise Elite is a premium residential development redefining luxury living in Rauzabagh, Aurangabad. Spread across an expansive 25,000 sq ft plot, the project offers 64 thoughtfully designed residences – 16 elegant 2BHKs, 32 spacious 3BHKs, and 16 opulent 4BHKs – all crafted for maximum comfort, natural light, and ventilation. This landmark community brings together modern architecture, lush landscaped surroundings, and exclusive lifestyle amenities including wellness zones, recreational spaces, and sustainable features. With its prime location near Kohinoor Lawns and Green Valley, residents enjoy excellent connectivity, security, and a serene environment, making Sunrise Elite the perfect destination for those seeking both prestige and peace.",
     details: [
       {
         icon: "🏋️",
-        title: "Open Gym",
+        title: "Open-Air Fitness Zone",
         description:
-          "Stay fit with access to modern outdoor fitness equipment in the landscaped terrace area.",
+          "State-of-the-art outdoor workout area to keep you active and energized.",
       },
       {
         icon: "🧘",
-        title: "Meditation & Yoga Zone",
+        title: "Yoga & Meditation Deck",
         description:
-          "Dedicated peaceful corner designed for mindfulness and well-being.",
+          "A calm, open-air retreat designed for mindfulness and daily wellness.",
       },
       {
         icon: "🎯",
-        title: "Game Zones",
+        title: "Indoor & Outdoor Games",
         description:
-          "Enjoy chess, carrom, table tennis, swings, ludo, and other community activities.",
+          "Recreational facilities including table tennis, chess, carrom, and play areas.",
       },
       {
         icon: "🌿",
-        title: "Terrace Garden & Senior Citizen Area",
+        title: "Landscaped Gardens",
         description:
-          "Relaxing green spaces ideal for family time and senior-friendly interaction.",
+          "Beautiful green spaces with seating, walking paths, and a senior-friendly layout.",
       },
       {
         icon: "🚗",
-        title: "Ample Parking & Lift with Backup",
+        title: "Secure Parking",
         description:
-          "Secure parking and reliable mobility with power-backed elevators.",
+          "Ample covered and open parking spaces with 24/7 surveillance.",
       },
       {
-        icon: "👨‍💼",
-        title: "Co-Working & Lounge Deck",
+        icon: "🛗",
+        title: "High-Speed Lifts with Backup",
         description:
-          "Outdoor co-working area and stylish lounge deck to work and socialize in style.",
+          "Smooth, reliable vertical access with power backup for uninterrupted convenience.",
       },
       {
         icon: "🔐",
-        title: "Security & Fire Systems",
+        title: "Advanced Security",
         description:
-          "Modern fire safety, security cabins, and intercom ensure complete peace of mind.",
+          "24x7 security personnel, CCTV monitoring, and modern fire safety systems.",
       },
       {
         icon: "☀️",
-        title: "Sustainable Living",
+        title: "Sustainable Living Features",
         description:
-          "Solar-powered amenities, rainwater harvesting, and eco-conscious features integrated throughout.",
+          "Rainwater harvesting, solar-powered lighting, and eco-friendly construction practices.",
       },
     ],
-    longDescription:
-      "Sunrise Elite offers the perfect blend of luxury, comfort, and lifestyle. Nestled in the prime locality of Kohinoor Colony, Aurangabad, it features a well-planned community with 2, 3, and 4 BHK residences including duplex options. The project boasts rooftop amenities like an open gym, landscaped gardens, play zones, co-working areas, and dedicated spaces for senior citizens. Designed with thoughtful urban planning, residents enjoy 24/7 security, power backup, designer lighting, and premium interiors. Whether you're looking to invest or reside, Sunrise Elite promises a vibrant yet peaceful lifestyle rooted in comfort, convenience, and contemporary architecture.",
     gallery: [
       SunriseElite1,
       SunriseElite2,
@@ -120,53 +140,48 @@ const projects = [
       SunriseElite5,
       SunriseElite6,
       SunriseElite7,
-      SunriseElite8,
-      SunriseElite9,
-      SunriseElite10,
-      SunriseElite11,
-      SunriseElite12,
-      SunriseElite13,
     ],
+    video: SunriseEliteVideo,
   },
 
   {
     id: "2",
-    slug: "PM Builder",
-    name: "PM Builder",
+    slug: "Gurjas Park",
+    name: "Gurjas Park",
     category: "Residential",
-    location: "Kohinoor Colony, Aurangabad",
-    image: PMBuilder,
+    location: "Teesgaon, Aurangabad",
+    image: GurjasPark,
     description:
-      "Experience unparalleled luxury at Ocean View Residences, a stunning collection of modern homes designed with breathtaking panoramic ocean views. Each residence offers a unique blend of sophisticated design and natural beauty.",
+      "Gurjas Park is an exclusive group housing project situated on 1 acre of prime land in Teesgaon, Aurangabad. Featuring thoughtfully designed 2BHK and 3BHK row houses, this project combines modern living with a serene community atmosphere.",
     details: [
       {
-        icon: "💡", // Unicode for lightbulb (Smart Home)
-        title: "Smart Home Integration",
+        icon: "🏡", // Unicode for house
+        title: "Row House Configuration",
         description:
-          "Fully integrated smart home systems for lighting, climate, and security, controllable from anywhere.",
+          "28 well-planned row houses including 2BHK and 3BHK units, designed for comfort and privacy.",
       },
       {
-        icon: "🌳", // Unicode for tree (Eco Materials)
-        title: "Eco-Friendly Materials",
+        icon: "🌳", // Unicode for tree
+        title: "Green Community Spaces",
         description:
-          "Constructed with sustainable and locally sourced eco-friendly materials to minimize environmental impact.",
+          "Landscaped gardens and open green areas to promote a healthy, eco-friendly lifestyle.",
       },
       {
-        icon: "🏊", // Unicode for person swimming (Infinity Pool)
-        title: "Private Infinity Pools",
+        icon: "🛡️", // Unicode for shield
+        title: "Secure Living",
         description:
-          "Each residence features a private infinity pool overlooking the Pacific Ocean, perfect for relaxation.",
+          "24/7 security with gated entry ensures safety for all residents.",
       },
       {
-        icon: "🛡️", // Unicode for shield (24/7 Security)
-        title: "24/7 Security & Concierge",
+        icon: "🚗", // Unicode for car
+        title: "Ample Parking",
         description:
-          "Enjoy peace of mind with round-the-clock security and a dedicated concierge service.",
+          "Dedicated parking spaces for each home and visitor parking within the community.",
       },
     ],
     longDescription:
-      "Nestled on the bluffs of Malibu, Ocean View Residences offer an exclusive lifestyle defined by elegance and tranquility. From the moment you arrive, you're greeted by contemporary architecture that seamlessly blends with the natural coastal landscape. Floor-to-ceiling windows flood the interiors with natural light and offer expansive views of the ocean. Gourmet kitchens, spa-like bathrooms, and spacious living areas are meticulously designed to provide the ultimate in comfort and style. Residents also have access to private beach paths and exclusive community amenities.",
-    gallery: [SunriseElite1, SunriseElite2, SunriseElite3, SunriseElite1],
+      "Gurjas Park is a premium residential enclave offering a harmonious blend of modern architecture and natural surroundings. Spread across 1 acre, the project comprises 28 meticulously designed row houses, including 2BHK and 3BHK units, each crafted to maximize space, light, and ventilation. Residents can enjoy landscaped gardens, dedicated parking, and a secure gated environment. The community is thoughtfully planned to foster a friendly neighborhood atmosphere, making Gurjas Park an ideal choice for families seeking both comfort and convenience in Teesgaon, Aurangabad.",
+    gallery: [GurjasPark, GurjasPark1, GurjasPark2],
   },
 
   {
@@ -174,36 +189,211 @@ const projects = [
     slug: "Patel Palms",
     name: "Patel Palms",
     category: "Residential",
-    location: "Downtown, New York",
-    image: PatelPalms,
+    location: "Aurangabad",
+    image: PatelPalms, // replace with your imported image variable
     description:
-      "Modern urban living at its finest. City Center Lofts offer stylish, spacious apartments in the heart of downtown with breathtaking city views.",
+      "Patel Palms is a luxurious group housing project featuring 20 elegant 3BHK row houses on a 25,000 sqft plot. Designed for comfort, privacy, and modern living, it offers a premium residential experience in a serene community setting.",
     details: [
       {
-        icon: "🏙️",
-        title: "Panoramic City Views",
-        description: "Unobstructed views of the city skyline from every unit.",
+        icon: "🏡",
+        title: "3BHK Row Houses",
+        description:
+          "20 thoughtfully designed 3BHK row houses with optimized layouts for space and comfort.",
       },
       {
-        icon: "🚇",
-        title: "Direct Subway Access",
+        icon: "🌳",
+        title: "Green Community Areas",
         description:
-          "Conveniently located with direct access to major subway lines.",
+          "Landscaped gardens and open spaces for recreation and relaxation within the community.",
       },
       {
-        icon: "🏋️",
-        title: "Rooftop Gym & Lounge",
+        icon: "🛡️",
+        title: "Secure & Gated",
         description:
-          "State-of-the-art fitness center and an exclusive residents' lounge on the rooftop.",
+          "24/7 security with gated entry to ensure safety and peace of mind for all residents.",
+      },
+      {
+        icon: "🚗",
+        title: "Dedicated Parking",
+        description:
+          "Ample parking spaces for residents and visitors within the premises.",
       },
     ],
     longDescription:
-      "Located in the vibrant core of downtown, City Center Lofts redefine urban luxury. These meticulously designed lofts boast open-concept layouts, high ceilings, and industrial-chic finishes. Large windows not only invite ample natural light but also frame the dynamic cityscape. Residents can enjoy a myriad of amenities, including a 24-hour doorman, a private cinema, and a co-working space, making it the ideal residence for the modern city dweller.",
-    gallery: [
-      "https://images.unsplash.com/photo-1499955085147-384166265691?fit=crop&w=1920&q=80",
-      "https://images.unsplash.com/photo-1513584684374-8bbb7f579b29?fit=crop&w=1920&q=80",
-    ],
+      "Patel Palms is an exclusive residential enclave spread over 25,000 sqft in Downtown Aurangabad. The project comprises 20 luxurious 3BHK row houses, each meticulously crafted with modern architecture, ample natural light, and spacious interiors. The community is thoughtfully designed with landscaped gardens, secure gated access, and dedicated parking for every household. Perfect for families seeking comfort, privacy, and a premium lifestyle in a harmonious neighborhood setting.",
+    gallery: [PatelPalms, PatelPalms1, PatelPalms2, PatelPalms3], // replace with your images
   },
+
+  {
+    id: "4",
+    slug: "Kohinoor College",
+    name: "Kohinoor College",
+    category: "Educational",
+    location: "Khuldabad, Aurangabad",
+    image: KohinoorCollege, // replace with your imported image variable
+    description:
+      "Kohinir College is a modern educational campus located in Khuldabad, Aurangabad, featuring dedicated buildings for Pharmacy, Homeopathy, and Management studies. The campus is designed to provide a holistic and conducive learning environment.",
+    details: [
+      {
+        icon: "🏫",
+        title: "Dedicated Academic Buildings",
+        description:
+          "Separate buildings for Pharmacy, Homeopathy, and Management programs with state-of-the-art facilities.",
+      },
+      {
+        icon: "📚",
+        title: "Modern Learning Resources",
+        description:
+          "Well-equipped classrooms, laboratories, and libraries to support advanced learning.",
+      },
+      {
+        icon: "🌳",
+        title: "Campus Green Spaces",
+        description:
+          "Open areas and landscaped gardens designed to provide a peaceful academic environment.",
+      },
+      {
+        icon: "🛡️",
+        title: "Secure Campus",
+        description:
+          "Gated campus with 24/7 security ensuring a safe environment for students and staff.",
+      },
+    ],
+    longDescription:
+      "Kohinir College in Khuldabad, Aurangabad, offers a comprehensive educational environment with specialized buildings for Pharmacy, Homeopathy, and Management courses. The campus integrates modern architecture with functional spaces for learning, research, and recreation. Students benefit from well-equipped classrooms, advanced laboratories, libraries, and serene green spaces, fostering a holistic educational experience. Security, accessibility, and community engagement are key aspects of the campus design, making Kohinir College a premier choice for higher education in the region.",
+    gallery: [KohinoorCollege, KohinoorCollege1, KohinoorCollege2], // replace with your images
+  },
+
+  {
+    id: "5",
+    slug: "Seema Khan Maternity Hospital",
+    name: "Maternity Hospital & Residence - Dr. Seema Khan",
+    category: "Healthcare",
+    location: "Shah Bazaar, Aurangabad",
+    image: SeemaKhanHospital, // replace with your imported image variable
+    description:
+      "A modern maternity hospital combined with a private residence for Dr. Seema Khan, located in Shah Bazaar, Aurangabad. Designed to provide advanced healthcare facilities and comfortable living in one integrated structure.",
+    details: [
+      {
+        icon: "🏥",
+        title: "Specialized Maternity Care",
+        description:
+          "Fully equipped maternity hospital with modern delivery rooms, neonatal care, and consultation facilities.",
+      },
+      {
+        icon: "🏠",
+        title: "Private Residence",
+        description:
+          "A thoughtfully designed residential area for Dr. Seema Khan within the same premises for convenience and privacy.",
+      },
+      {
+        icon: "📐",
+        title: "Efficient Space Utilization",
+        description:
+          "Built on a 4,000 sqft plot with a total construction area of 16,000 sqft, maximizing functionality for both medical and residential needs.",
+      },
+      {
+        icon: "🛡️",
+        title: "Safety & Accessibility",
+        description:
+          "Secure entry points, patient-friendly accessibility, and compliance with medical building standards.",
+      },
+    ],
+    longDescription:
+      "Located in Shah Bazaar, Aurangabad, the maternity hospital and residence for Dr. Seema Khan is a unique combination of healthcare and private living. Spread over a 4,000 sqft land parcel with a total built-up area of 16,000 sqft, the facility houses advanced maternity care units, well-planned delivery rooms, neonatal intensive care, consultation areas, and administrative offices. The integrated private residence provides convenience and privacy for the doctor while ensuring quick accessibility to the hospital. Designed with modern architecture, safety features, and efficient space planning, this project serves as both a healthcare landmark and a comfortable home.",
+    gallery: [SeemaKhanHospital, SeemaKhanHospital1],
+  },
+
+  {
+    id: "6",
+    slug: "Atharva Jagganath",
+    name: "Atharva Jagganath",
+    category: "Residential",
+    location: "Usmanpura, Aurangabad",
+    image: AtharvaJagganath, // replace with your imported image variable
+    description:
+      "Atharva Jagganath is a premium 3BHK residential project in Usmanpura, located behind Sant Eknath Rangmandir. Featuring 6 luxurious flats with parking and 5 residential floors, it offers exclusivity and elegance in the heart of the city.",
+    details: [
+      {
+        icon: "🏢",
+        title: "Low-Density Living",
+        description:
+          "Only 6 spacious 3BHK flats ensuring privacy and a peaceful community environment.",
+      },
+      {
+        icon: "🅿️",
+        title: "Dedicated Parking",
+        description:
+          "Ground floor dedicated to secure parking for residents and visitors.",
+      },
+      {
+        icon: "⬆️",
+        title: "5 Residential Floors",
+        description:
+          "A well-planned building with parking plus 5 floors for residential units.",
+      },
+      {
+        icon: "🌆",
+        title: "Prime Location",
+        description:
+          "Situated in Usmanpura behind Sant Eknath Rangmandir, offering excellent connectivity and neighborhood amenities.",
+      },
+    ],
+    longDescription:
+      "Atharva Jagganath is a luxurious 3BHK apartment project located in Usmanpura, Aurangabad, just behind the iconic Sant Eknath Rangmandir. Designed for a select few, the building houses only 6 exclusive flats, ensuring privacy and comfort for every resident. The project features ground floor parking and 5 residential floors, with each flat offering spacious layouts, modern interiors, and high-quality finishes. Its prime location provides easy access to cultural landmarks, markets, schools, and healthcare facilities, making it a perfect blend of convenience and premium living.",
+    gallery: [AtharvaJagganath, AtharvaJagganath1],
+  },
+
+  {
+    id: "7",
+    slug: "Aakar Builders and Developers",
+    name: "Aakar Builders and Developers",
+    category: "Residential",
+    location: "Gut No. 16, Kanchanwadi, Aurangabad",
+    image: AakarBuilders, // replace with your imported image variable
+    description:
+      "A premium 3-acre group housing project in Kanchanwadi, Aurangabad, featuring 4BHK twin bungalows, 5BHK independent bungalows, and a select set of row houses. Designed for those who seek exclusivity, elegance, and spacious living.",
+    details: [
+      {
+        icon: "🏘️",
+        title: "4BHK Twin Bungalows",
+        description:
+          "18 luxurious twin bungalows offering modern layouts, private outdoor spaces, and premium finishes.",
+      },
+      {
+        icon: "🏠",
+        title: "5BHK Independent Bungalows",
+        description:
+          "9 grand independent bungalows designed for maximum privacy and ultra-luxurious living.",
+      },
+      {
+        icon: "🏡",
+        title: "Row Houses",
+        description:
+          "4 exclusive row houses designed with contemporary architecture and functional interiors.",
+      },
+      {
+        icon: "🌳",
+        title: "3-Acre Community",
+        description:
+          "Sprawling over 3 acres with landscaped gardens, wide internal roads, and secure gated access.",
+      },
+    ],
+    longDescription:
+      "Situated at Gut No. 16, Kanchanwadi, Aurangabad, this premium group housing project spans 3 acres and offers a mix of 4BHK twin bungalows, 5BHK independent bungalows, and 4 exclusive row houses. With 18 twin bungalows and 9 independent bungalows, the project is designed for residents who value space, comfort, and exclusivity. Wide internal roads, landscaped green zones, and high-end architectural design make this community a rare offering in Aurangabad. Each home is meticulously crafted to blend luxury with functionality, ensuring an elevated lifestyle experience.",
+    gallery: [
+      AakarBuilders1,
+      AakarBuilders2,
+      AakarBuilders3,
+      AakarBuilders4,
+      AakarBuilders5,
+      AakarBuilders6,
+      AakarBuilders7,
+      AakarBuilders8,
+    ],
+    video: AakarBuildersVideo,
+  },
+
   // Add more projects here
 ];
 
