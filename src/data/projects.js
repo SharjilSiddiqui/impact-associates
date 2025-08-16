@@ -1,42 +1,42 @@
-import SunriseElite from "../assets/sunrise elite/Sunrice Elite furant view.jpg";
-import SunriseElite1 from "../assets/sunrise elite/Sunrice Elite back side view.jpg";
-import SunriseElite2 from "../assets/sunrise elite/Sunrice Elite floor Plan.jpg";
-import SunriseElite3 from "../assets/sunrise elite/Sunrice Elite Night view.jpg";
-import SunriseElite4 from "../assets/sunrise elite/Sunrice Elite sky view.jpg";
-import SunriseElite5 from "../assets/sunrise elite/Sunrice Elite terrace.jpg";
-import SunriseElite6 from "../assets/sunrise elite/Sunrice Elite terrace 01.jpg";
-import SunriseElite7 from "../assets/sunrise elite/Sunrice Elite terrace 02.jpg";
-import SunriseEliteVideo from "../assets/sunrise elite/4K Final Export send.mp4";
+import SunriseElite from "../assets/sunrise-elite/sunrice-elite-furant-view.jpg";
+import SunriseElite1 from "../assets/sunrise-elite/sunrice-elite-back-side-view.jpg";
+import SunriseElite2 from "../assets/sunrise-elite/sunrice-elite-floor-plan.jpg";
+import SunriseElite3 from "../assets/sunrise-elite/sunrice-elite-night-view.jpg";
+import SunriseElite4 from "../assets/sunrise-elite/sunrice-elite-sky-view.jpg";
+import SunriseElite5 from "../assets/sunrise-elite/sunrice-elite-terrace.jpg";
+import SunriseElite6 from "../assets/sunrise-elite/sunrice-elite-terrace-01.jpg";
+import SunriseElite7 from "../assets/sunrise-elite/sunrice-elite-terrac-02.jpg";
+import SunriseEliteVideo from "../assets/sunrise-elite/4k-video.mp4";
 
-import GurjasPark from "../assets/pm builder/pm apartment 01.jpg";
-import GurjasPark1 from "../assets/pm builder/pm builder changes.jpg";
-import GurjasPark2 from "../assets/pm builder/pm rowhouses 02.jpg";
+import GurjasPark from "../assets/pm-builder/pm-apartment.jpg";
+import GurjasPark1 from "../assets/pm-builder/pm-builder-changes.jpg";
+import GurjasPark2 from "../assets/pm-builder/pm-rowhouses-02.jpg";
 
-import PatelPalms from "../assets/patel palms/patel palm row house.jpg";
-import PatelPalms1 from "../assets/patel palms/PATEL_PALMS_PHASE_3-1.jpg";
-import PatelPalms2 from "../assets/patel palms/PATEL_PALMS_PHASE_3-2.jpg";
-import PatelPalms3 from "../assets/patel palms/PATEL_PALMS_PHASE_3-3.jpg";
+import PatelPalms from "../assets/patel-palms/patel-palm-row-house.jpg";
+import PatelPalms1 from "../assets/patel-palms/patel-palms1.jpg";
+import PatelPalms2 from "../assets/patel-palms/patel-palms-2.jpg";
+import PatelPalms3 from "../assets/patel-palms/patel-palms-3.jpg";
 
-import KohinoorCollege from "../assets/Kohinoor college/KOHINOOR_COLLEGE AT CHOWKA.jpg";
-import KohinoorCollege1 from "../assets/Kohinoor college/gate1-1 (1).jpg";
-import KohinoorCollege2 from "../assets/Kohinoor college/kohinoor college building at khuldabad.jpg";
+import KohinoorCollege from "../assets/kohinoor-college/kohinoor-college-building-at-khuldabad.jpg";
+import KohinoorCollege1 from "../assets/kohinoor-college/gate1-1.jpg";
+import KohinoorCollege2 from "../assets/kohinoor-college/kohinoor-2.jpg";
 
-import SeemaKhanHospital from "../assets/Citizen hospital/PROPOSED HOSPTAL BUILDING FOR Dr.Seema MAAM AT SHABAZAR AURANGABAD.jpg";
-import SeemaKhanHospital1 from "../assets/Citizen hospital/PROPOSED HOSPTAL BUILDING FOR Dr.Seema MAAM AT SHABAZAR AURANGABAD--.jpg";
+import SeemaKhanHospital from "../assets/citizen-hospital/citizen-1.jpg";
+import SeemaKhanHospital1 from "../assets/citizen-hospital/citizen-2.jpg";
 
-import AtharvaJagganath from "../assets/Atharva Jagganath/PROPOSED BUILDING FOR MR.RAVI SIR AT USMANPURA.jpeg";
-import AtharvaJagganath1 from "../assets/Atharva Jagganath/PROPOSED BUILDING FOR MR.RAVI SIR AT USMANPURA...jpeg";
+import AtharvaJagganath from "../assets/atharva-jagganath/proposed-1.jpeg";
+import AtharvaJagganath1 from "../assets/atharva-jagganath/proposed-2.jpeg";
+import AtharvaJagganathVideo from "../assets/atharva-jagganath/atharva.mp4";
 
-import AakarBuilders from "../assets/Aakar builders and developers/old phase2 BTYPE.jpg";
-import AakarBuilders1 from "../assets/Aakar builders and developers/layout ariel5.jpg";
-import AakarBuilders2 from "../assets/Aakar builders and developers/OLD ELEVATION.jpeg";
-import AakarBuilders3 from "../assets/Aakar builders and developers/OLD Elevation2.jpg";
-import AakarBuilders4 from "../assets/Aakar builders and developers/OLD pase 1 TYPE D.jpg";
-import AakarBuilders5 from "../assets/Aakar builders and developers/phase 1 a tpye.jpg";
-import AakarBuilders6 from "../assets/Aakar builders and developers/phase 1 b type.jpg";
-import AakarBuilders7 from "../assets/Aakar builders and developers/phase1 e type.jpg";
-import AakarBuilders8 from "../assets/Aakar builders and developers/phase2 a type1 EVENING(a).jpg";
-import AakarBuildersVideo from "../assets/Aakar builders and developers/aakar.mp4";
+import AakarBuilders from "../assets/aakar-builders-and-developers/old-phase2-btype.jpg";
+import AakarBuilders1 from "../assets/aakar-builders-and-developers/layout-ariel5.jpg";
+import AakarBuilders2 from "../assets/aakar-builders-and-developers/old-elevation.jpeg";
+import AakarBuilders3 from "../assets/aakar-builders-and-developers/old-elevation2.jpg";
+import AakarBuilders4 from "../assets/aakar-builders-and-developers/old-pase-1-type-d.jpg";
+import AakarBuilders5 from "../assets/aakar-builders-and-developers/phase-1-a-tpye.jpg";
+import AakarBuilders6 from "../assets/aakar-builders-and-developers/phase-1-b-type.jpg";
+import AakarBuilders7 from "../assets/aakar-builders-and-developers/phase1-e-type.jpg";
+import AakarBuilders8 from "../assets/aakar-builders-and-developers/phase2-a-type1-evening(a).jpg";
 
 const projects = [
   //   {
@@ -344,7 +344,7 @@ const projects = [
     longDescription:
       "Atharva Jagganath is a luxurious 3BHK apartment project located in Usmanpura, Aurangabad, just behind the iconic Sant Eknath Rangmandir. Designed for a select few, the building houses only 6 exclusive flats, ensuring privacy and comfort for every resident. The project features ground floor parking and 5 residential floors, with each flat offering spacious layouts, modern interiors, and high-quality finishes. Its prime location provides easy access to cultural landmarks, markets, schools, and healthcare facilities, making it a perfect blend of convenience and premium living.",
     gallery: [AtharvaJagganath, AtharvaJagganath1],
-    video: AakarBuildersVideo,
+    video: AtharvaJagganathVideo,
   },
 
   {
