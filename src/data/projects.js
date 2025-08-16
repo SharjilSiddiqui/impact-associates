@@ -75,6 +75,8 @@ const projects = [
     slug: "sunrise-elite",
     name: "Sunrise Elite",
     category: "Residential",
+    size: "25,000 sq ft",
+    date: "2026",
     location:
       "Opp. Kohinoor Lawns, Beside Green Valley, Rauza Bagh, Aurangabad",
     image: SunriseElite,
@@ -267,7 +269,7 @@ const projects = [
   {
     id: "5",
     slug: "Seema Khan Maternity Hospital",
-    name: "Maternity Hospital & Residence - Dr. Seema Khan",
+    name: "Citizen Hospital",
     category: "Healthcare",
     location: "Shah Bazaar, Aurangabad",
     image: SeemaKhanHospital, // replace with your imported image variable
@@ -342,6 +344,7 @@ const projects = [
     longDescription:
       "Atharva Jagganath is a luxurious 3BHK apartment project located in Usmanpura, Aurangabad, just behind the iconic Sant Eknath Rangmandir. Designed for a select few, the building houses only 6 exclusive flats, ensuring privacy and comfort for every resident. The project features ground floor parking and 5 residential floors, with each flat offering spacious layouts, modern interiors, and high-quality finishes. Its prime location provides easy access to cultural landmarks, markets, schools, and healthcare facilities, making it a perfect blend of convenience and premium living.",
     gallery: [AtharvaJagganath, AtharvaJagganath1],
+    video: AakarBuildersVideo,
   },
 
   {
@@ -391,7 +394,6 @@ const projects = [
       AakarBuilders7,
       AakarBuilders8,
     ],
-    video: AakarBuildersVideo,
   },
 
   // Add more projects here

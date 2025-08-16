@@ -1,6 +1,6 @@
 import React, { useState, useEffect, memo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   FaArrowLeft,
   FaMapMarkerAlt,
@@ -17,45 +17,52 @@ import Footer from "../components/Footer";
 const OverviewTab = memo(({ project }) => (
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
     <div className="lg:col-span-2">
-      <h3 className="text-3xl font-heading font-bold text-black mb-6">
+      <h3 className="text-3xl font-heading font-bold text-gray-900 mb-6">
         Project Overview
       </h3>
       <div className="prose prose-lg max-w-none">
-        <p className="text-neutral-600 leading-relaxed mb-6">
+        <p className="text-gray-600 leading-relaxed mb-6">
           {project.description}
         </p>
         {project.longDescription && (
-          <p className="text-neutral-600 leading-relaxed mb-6">
+          <p className="text-gray-600 leading-relaxed mb-6">
             {project.longDescription}
           </p>
         )}
       </div>
     </div>
 
-    <div>
-      <div className="bg-gradient-to-br from-brand-500 to-brand-600 rounded-3xl p-8 text-white">
-        <h4 className="text-2xl font-heading font-bold mb-6">Get in Touch</h4>
-        <p className="text-white/80 mb-6">
-          Interested in this project? Let's discuss how we can bring your vision
-          to life.
-        </p>
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <FaPhone className="text-brand-300" />
-            <span>+91 98909 33772</span>
+    <div className="relative">
+      <div className="sticky top-20">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-8 text-white shadow-lg">
+          <h4 className="text-2xl font-heading font-bold mb-6">Get in Touch</h4>
+          <p className="text-white/80 mb-6">
+            Interested in this project? Let's discuss how we can bring your
+            vision to life.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <FaPhone className="text-white/70" />
+              <span>+91 98909 33772</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <FaEnvelope className="text-white/70" />
+              <span>impact_designassociates@rediffmail.com</span>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <FaEnvelope className="text-brand-300" />
-            <span>impact_designassociates@rediffmail.com</span>
-          </div>
+          <Link to="/contact">
+            <motion.button
+              className="w-full mt-6 bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Start Your Project
+            </motion.button>
+          </Link>
         </div>
-        <motion.button
-          className="w-full mt-6 bg-white text-brand-600 px-6 py-3 rounded-xl font-semibold hover:bg-neutral-100 transition-all duration-300"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Start Your Project
-        </motion.button>
       </div>
     </div>
   </div>
@@ -64,31 +71,31 @@ const OverviewTab = memo(({ project }) => (
 const SpecificationsTab = memo(({ project, projectCategory }) => (
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
     <div>
-      <h3 className="text-3xl font-heading font-bold text-black mb-6">
+      <h3 className="text-3xl font-heading font-bold text-gray-900 mb-6">
         Technical Specifications
       </h3>
       <div className="space-y-6">
         {[
           { label: "Project Type", value: projectCategory },
           { label: "Location", value: project.location },
-          { label: "Size", value: "2,500 sq ft" },
-          { label: "Completion Date", value: "2024" },
+          { label: "Size", value: project.size },
+          { label: "Completion Date", value: project.date },
           { label: "Architect", value: "Impact Design Associates" },
           { label: "Client", value: "Private Client" },
         ].map((spec, idx) => (
           <div
             key={idx}
-            className="flex justify-between items-center py-4 border-b border-neutral-200"
+            className="flex justify-between items-center py-4 border-b border-gray-200"
           >
-            <span className="font-semibold text-black">{spec.label}</span>
-            <span className="text-neutral-600">{spec.value}</span>
+            <span className="font-semibold text-gray-900">{spec.label}</span>
+            <span className="text-gray-600">{spec.value}</span>
           </div>
         ))}
       </div>
     </div>
 
     <div>
-      <h3 className="text-3xl font-heading font-bold text-black mb-6">
+      <h3 className="text-3xl font-heading font-bold text-gray-900 mb-6">
         Materials & Features
       </h3>
       <div className="space-y-4">
@@ -101,8 +108,8 @@ const SpecificationsTab = memo(({ project, projectCategory }) => (
           "Rainwater Harvesting System",
         ].map((item, idx) => (
           <div key={idx} className="flex items-center gap-3">
-            <FaCheckCircle className="text-brand-500 flex-shrink-0" />
-            <span className="text-neutral-700">{item}</span>
+            <FaCheckCircle className="text-blue-500 flex-shrink-0" />
+            <span className="text-gray-700">{item}</span>
           </div>
         ))}
       </div>
@@ -112,39 +119,45 @@ const SpecificationsTab = memo(({ project, projectCategory }) => (
 
 const GalleryTab = memo(({ project, openModal }) => (
   <div>
-    <h3 className="text-3xl font-heading font-bold text-black mb-8">
+    <h3 className="text-3xl font-heading font-bold text-gray-900 mb-8">
       Project Gallery
     </h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {project.gallery?.map((img, idx) => (
         <div
           key={idx}
-          className="aspect-square rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 cursor-pointer"
+          className="relative aspect-square rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 cursor-pointer group"
           onClick={() => openModal(img, false)}
         >
           <img
             src={img}
             alt={`${project.name} - ${idx + 1}`}
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
           />
+          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-white text-xl font-semibold">View</span>
+          </div>
         </div>
       ))}
 
       {project.video && (
         <div
-          className="aspect-video rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 cursor-pointer col-span-full md:col-span-2 lg:col-span-3"
+          className="relative aspect-video rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 cursor-pointer col-span-full md:col-span-2 lg:col-span-3 group"
           onClick={() => openModal(project.video, true)}
         >
-          <div className="relative w-full h-full bg-black flex items-center justify-center">
-            <span className="text-white text-xl font-semibold">▶ Play Video</span>
+          <div className="w-full h-full bg-black flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="relative z-10 text-white text-xl font-semibold">
+              ▶ Play Video
+            </span>
           </div>
         </div>
       )}
 
       {!project.gallery && !project.video && (
         <div className="col-span-full text-center py-12">
-          <p className="text-neutral-600">Gallery images coming soon...</p>
+          <p className="text-gray-600">Gallery images coming soon...</p>
         </div>
       )}
     </div>
@@ -160,22 +173,27 @@ const ProjectDetail = () => {
 
   const project = projects.find((p) => p.slug === slug);
 
+  const { scrollY } = useScroll();
+  const yParallax = useTransform(scrollY, [0, 500], [0, -50]);
+
   useEffect(() => {
     if (project) window.scrollTo(0, 0);
   }, [project]);
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gray-50">
         <Navbar />
         <div className="pt-32 pb-20 text-center">
-          <h1 className="text-4xl font-bold text-black mb-4">Project Not Found</h1>
-          <p className="text-neutral-600 mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Project Not Found
+          </h1>
+          <p className="text-gray-600 mb-8">
             The project you're looking for doesn't exist.
           </p>
           <Link
             to="/projects"
-            className="bg-gradient-to-r from-brand-500 to-brand-600 text-white px-8 py-3 rounded-full hover:from-brand-600 hover:to-brand-700 transition-all duration-300"
+            className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
           >
             Back to Projects
           </Link>
@@ -193,13 +211,17 @@ const ProjectDetail = () => {
 
   const getProjectCategory = (name) => {
     const lower = name.toLowerCase();
-    if (lower.includes("residence") || lower.includes("home")) return "Residential";
-    if (lower.includes("center") || lower.includes("office")) return "Commercial";
+    if (lower.includes("residence") || lower.includes("home"))
+      return "Residential";
+    if (lower.includes("center") || lower.includes("office"))
+      return "Commercial";
     return "Residential";
   };
 
   const projectCategory = getProjectCategory(project.name);
-  const relatedProjects = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
+  const relatedProjects = projects
+    .filter((p) => p.slug !== project.slug)
+    .slice(0, 3);
 
   // Open Modal
   const openModal = (content, video = false) => {
@@ -213,62 +235,85 @@ const ProjectDetail = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-50 via-white to-brand-50/30 overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gray-50 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-500/5 to-brand-600/5"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/10 to-blue-50/10"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="mb-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors duration-300"
             >
               <FaArrowLeft className="text-sm" /> Back to Projects
             </Link>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Project Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-blue-600 bg-gradient-to-r from-brand-500 to-brand-600 shadow-glow">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg">
                   {projectCategory}
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-black mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
                 {project.name}
               </h1>
-              <p className="text-xl text-neutral-600 mb-8 leading-relaxed">{project.description}</p>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                {project.description}
+              </p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                {[
-                  { icon: FaMapMarkerAlt, label: "Location", value: project.location },
-                  { icon: FaBuilding, label: "Size", value: "25,000 sq ft" },
-                ].map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-glow">
-                      <stat.icon className="text-blue-600 text-lg" />
-                    </div>
-                    <div className="text-sm text-neutral-500 mb-1">{stat.label}</div>
-                    <div className="font-semibold text-black">{stat.value}</div>
+              <div className="flex flex-wrap gap-x-12 gap-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <FaMapMarkerAlt className="text-blue-600 text-lg" />
                   </div>
-                ))}
+                  <div>
+                    <div className="text-sm text-gray-500">Location</div>
+                    <div className="font-semibold text-gray-900">
+                      {project.location}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <FaBuilding className="text-blue-600 text-lg" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500">Size</div>
+                    <div className="font-semibold text-gray-900">
+                      25,000 sq ft
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Main Image */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-soft">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+            {/* Main Image with Parallax */}
+            <motion.div
+              style={{ y: yParallax }}
+              className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-soft-lg"
+            >
+              <img
+                src={project.image}
+                alt={project.name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl" />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -276,34 +321,52 @@ const ProjectDetail = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Tab Navigation */}
-          <div className="flex flex-wrap gap-2 mb-12 border-b border-neutral-200">
+          <div className="flex flex-wrap gap-2 mb-12 border-b border-gray-200">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => activeTab !== tab.id && setActiveTab(tab.id)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 relative cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-brand-500 to-brand-600 text-blue-600 shadow-glow"
-                    : "text-neutral-600 hover:text-black hover:bg-neutral-100"
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 {tab.label}
+                {activeTab === tab.id && (
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute -bottom-px left-0 w-full h-0.5 bg-blue-600"
+                  />
+                )}
               </button>
             ))}
           </div>
 
           {/* Tab Content */}
-          {activeTab === "overview" && <OverviewTab project={project} />}
-          {activeTab === "gallery" && <GalleryTab project={project} openModal={openModal} />}
-          {activeTab === "specifications" && (
-            <SpecificationsTab project={project} projectCategory={projectCategory} />
-          )}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {activeTab === "overview" && <OverviewTab project={project} />}
+            {activeTab === "gallery" && (
+              <GalleryTab project={project} openModal={openModal} />
+            )}
+            {activeTab === "specifications" && (
+              <SpecificationsTab
+                project={project}
+                projectCategory={projectCategory}
+              />
+            )}
+          </motion.div>
         </div>
       </section>
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -312,32 +375,36 @@ const ProjectDetail = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-display font-bold text-black mb-4">
-                Related Projects
+              <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                More Projects
               </h2>
-              <p className="text-xl text-neutral-600">Explore more of our work</p>
+              <p className="text-xl text-gray-600">
+                Explore more of our stunning work
+              </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {relatedProjects.map((rp, idx) => (
-                <div key={rp.slug} className="bg-white rounded-3xl shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden">
-                  <Link to={`/projects/${rp.slug}`}>
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
-                        src={rp.image}
-                        alt={rp.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-heading font-semibold text-black mb-2">
-                        {rp.name}
-                      </h3>
-                      <p className="text-neutral-600 text-sm">{rp.description}</p>
-                    </div>
-                  </Link>
-                </div>
+                <Link
+                  key={rp.slug}
+                  to={`/projects/${rp.slug}`}
+                  className="block bg-white rounded-3xl shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={rp.image}
+                      alt={rp.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-heading font-semibold text-gray-900 mb-2">
+                      {rp.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm">{rp.description}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -349,13 +416,19 @@ const ProjectDetail = () => {
       {/* Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 flex items-start justify-center p-4 pt-24 overflow-auto"
+          className="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-4 overflow-auto"
           onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}
         >
-          <div className="relative max-w-6xl w-full">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative max-w-6xl w-full"
+          >
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-2 right-2 text-white text-3xl font-bold z-50"
+              className="absolute top-4 right-4 text-white text-4xl font-light z-50 hover:text-gray-300 transition cursor-pointer"
             >
               &times;
             </button>
@@ -374,7 +447,7 @@ const ProjectDetail = () => {
                 loading="lazy"
               />
             )}
-          </div>
+          </motion.div>
         </div>
       )}
     </div>
