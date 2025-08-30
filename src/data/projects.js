@@ -23,6 +23,10 @@ import KohinoorCollege2 from "../assets/kohinoor-college/kohinoor-2.jpg";
 
 import SeemaKhanHospital from "../assets/citizen-hospital/citizen-1.jpg";
 import SeemaKhanHospital1 from "../assets/citizen-hospital/citizen-2.jpg";
+import SeemaKhanHospital2 from "../assets/citizen-hospital/SSS_6206.JPG";
+import SeemaKhanHospital3 from "../assets/citizen-hospital/SSS_6211.JPG";
+import SeemaKhanHospital4 from "../assets/citizen-hospital/SSS_6214.JPG";
+import SeemaKhanHospital5 from "../assets/citizen-hospital/SSS_6237.JPG";
 
 import AtharvaJagganath from "../assets/atharva-jagganath/proposed-1.jpeg";
 import AtharvaJagganath1 from "../assets/atharva-jagganath/proposed-2.jpeg";
@@ -303,7 +307,7 @@ const projects = [
     ],
     longDescription:
       "Located in Shah Bazaar, Aurangabad, the maternity hospital and residence for Dr. Seema Khan is a unique combination of healthcare and private living. Spread over a 4,000 sqft land parcel with a total built-up area of 16,000 sqft, the facility houses advanced maternity care units, well-planned delivery rooms, neonatal intensive care, consultation areas, and administrative offices. The integrated private residence provides convenience and privacy for the doctor while ensuring quick accessibility to the hospital. Designed with modern architecture, safety features, and efficient space planning, this project serves as both a healthcare landmark and a comfortable home.",
-    gallery: [SeemaKhanHospital, SeemaKhanHospital1],
+    gallery: [SeemaKhanHospital, SeemaKhanHospital1, SeemaKhanHospital2, SeemaKhanHospital3, SeemaKhanHospital4, SeemaKhanHospital5],
   },
 
   {
