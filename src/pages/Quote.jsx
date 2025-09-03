@@ -60,11 +60,13 @@ const Quote = () => {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gradient-animated mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gradient-animated mb-4 leading-tight pb-1">
             Request a Custom Quote
           </h1>
+
           <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-            Let us know your requirements — we’ll get back with a tailored proposal.
+            Let us know your requirements — we’ll get back with a tailored
+            proposal.
           </p>
         </motion.div>
       </section>

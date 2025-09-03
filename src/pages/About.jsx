@@ -26,13 +26,13 @@ const fadeUp = {
 };
 
 const aboutItems = [
-  {
-    icon: <FaUserTie className="text-white text-3xl" />,
-    title: "About Us",
-    description:
-      "We are an award-winning architectural firm with a passion for shaping the skylines of tomorrow through technology, creativity, and precision.",
-    gradient: "from-blue-400 to-blue-600",
-  },
+  // {
+  //   icon: <FaUserTie className="text-white text-3xl" />,
+  //   title: "About Us",
+  //   description:
+  //     "We are an award-winning architectural firm with a passion for shaping the skylines of tomorrow through technology, creativity, and precision.",
+  //   gradient: "from-blue-400 to-blue-600",
+  // },
   {
     icon: <FaDraftingCompass className="text-white text-3xl" />,
     title: "Design Ethos",
@@ -70,9 +70,10 @@ const About = () => {
           variants={fadeUp}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gradient-animated">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gradient-animated leading-snug pb-1">
             Crafting the Blueprint of Tomorrow
           </h1>
+
           <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
             From iconic buildings to immersive environments, we lead with
             creativity and build with purpose.
@@ -146,20 +147,21 @@ const About = () => {
               Meet Our Founder
             </h3>
             <h4 className="text-xl font-semibold text-gray-800 mb-4">
-              Ar. Hares Siddiqui — Founder & Principal Architect
+              Ar. Mohammed Hares Siddiqui — Founder & Principal Architect
             </h4>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               With a vision to redefine modern architecture in Aurangabad and
-              beyond, Ar. Hares Siddiqui established Impact Design Associates with a
-              passion for sustainable, functional, and timeless design. His
+              beyond, Ar. Mohammed Hares Siddiqui established Impact Design
+              Associates with a passion for sustainable, functional, and
+              timeless design. Bringing over 23 years of experience , his
               expertise spans residential, healthcare, and institutional
               architecture, where he has consistently delivered innovative
               solutions tailored to client needs.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed">
-              As the driving force behind the practice, he leads with creativity,
-              precision, and a commitment to excellence, ensuring that every
-              project reflects both purpose and beauty.
+              As the driving force behind the practice, he leads with
+              creativity, precision, and a commitment to excellence, ensuring
+              that every project reflects both purpose and beauty.
             </p>
           </motion.div>
         </div>

@@ -7,7 +7,6 @@ import {
   FaBuilding,
   FaPhone,
   FaEnvelope,
-  FaCheckCircle,
 } from "react-icons/fa";
 import projects from "../data/projects";
 import Navbar from "../components/Navbar";
@@ -79,9 +78,6 @@ const SpecificationsTab = memo(({ project, projectCategory }) => (
           { label: "Project Type", value: projectCategory },
           { label: "Location", value: project.location },
           { label: "Size", value: project.size },
-          { label: "Completion Date", value: project.date },
-          { label: "Architect", value: "Impact Design Associates" },
-          { label: "Client", value: "Private Client" },
         ].map((spec, idx) => (
           <div
             key={idx}
@@ -89,27 +85,6 @@ const SpecificationsTab = memo(({ project, projectCategory }) => (
           >
             <span className="font-semibold text-gray-900">{spec.label}</span>
             <span className="text-gray-600">{spec.value}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div>
-      <h3 className="text-3xl font-heading font-bold text-gray-900 mb-6">
-        Materials & Features
-      </h3>
-      <div className="space-y-4">
-        {[
-          "Premium Concrete & Steel Structure",
-          "Energy-Efficient Glass Windows",
-          "Sustainable Wood Flooring",
-          "Smart Home Automation",
-          "Solar Panel Integration",
-          "Rainwater Harvesting System",
-        ].map((item, idx) => (
-          <div key={idx} className="flex items-center gap-3">
-            <FaCheckCircle className="text-blue-500 flex-shrink-0" />
-            <span className="text-gray-700">{item}</span>
           </div>
         ))}
       </div>
@@ -203,22 +178,18 @@ const ProjectDetail = () => {
     );
   }
 
-  const tabs = [
-    { id: "overview", label: "Overview" },
-    { id: "gallery", label: "Gallery" },
-    { id: "specifications", label: "Specifications" },
-  ];
-
-  const getProjectCategory = (name) => {
-    const lower = name.toLowerCase();
+  // ✅ Updated category logic
+  const getProjectCategory = (project) => {
+    if (project.category) return project.category; // Use explicit category if available
+    const lower = project.name.toLowerCase();
     if (lower.includes("residence") || lower.includes("home"))
       return "Residential";
     if (lower.includes("center") || lower.includes("office"))
       return "Commercial";
-    return "Residential";
+    return "Residential"; // final fallback
   };
 
-  const projectCategory = getProjectCategory(project.name);
+  const projectCategory = getProjectCategory(project);
   const relatedProjects = projects
     .filter((p) => p.slug !== project.slug)
     .slice(0, 3);
@@ -322,7 +293,11 @@ const ProjectDetail = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-12 border-b border-gray-200">
-            {tabs.map((tab) => (
+            {[
+              { id: "overview", label: "Overview" },
+              { id: "gallery", label: "Gallery" },
+              { id: "specifications", label: "Specifications" },
+            ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
@@ -384,7 +359,7 @@ const ProjectDetail = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {relatedProjects.map((rp, idx) => (
+              {relatedProjects.map((rp) => (
                 <Link
                   key={rp.slug}
                   to={`/projects/${rp.slug}`}

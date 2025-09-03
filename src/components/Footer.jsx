@@ -198,7 +198,7 @@ const Footer = () => {
         </div>
 
         {/* Enhanced Newsletter Section */}
-        <motion.div 
+        {/* <motion.div 
           className="border-t border-gray-700 pt-12 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -237,7 +237,7 @@ const Footer = () => {
               </motion.button>
             </form>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Enhanced Bottom Bar */}
