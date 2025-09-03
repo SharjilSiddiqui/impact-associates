@@ -293,7 +293,7 @@ const ProjectDetail = () => {
                   <div>
                     <div className="text-sm text-gray-500">Size</div>
                     <div className="font-semibold text-gray-900">
-                      25,000 sq ft
+                      {project.size}
                     </div>
                   </div>
                 </div>

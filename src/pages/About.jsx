@@ -80,6 +80,91 @@ const About = () => {
         </motion.div>
       </section>
 
+      {/* Firm About Text Section */}
+      <section className="max-w-5xl mx-auto py-16 px-6 text-center md:text-left">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          <h2 className="text-3xl font-bold text-blue-700 mb-6">
+            About Impact Design Associates
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            Impact Design Associates is an architecture and design practice
+            based in Aurangabad, dedicated to creating spaces that blend
+            functionality, sustainability, and timeless aesthetics. Our
+            portfolio spans residential, commercial, institutional, and interior
+            design projects, reflecting our versatility and commitment to
+            excellence.
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            We believe every project is an opportunity to transform ideas into
+            meaningful environments. Whether it’s a luxury residence, group
+            housing project, or a modern educational campus, we approach each
+            design with creativity, technical precision, and a deep
+            understanding of our clients’ aspirations.
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            With experience in urban planning, housing developments, healthcare
+            facilities, and bespoke interiors, our team ensures that every
+            design not only meets but exceeds expectations. We emphasize the
+            harmony between built form and context, ensuring our projects
+            contribute positively to the community and environment.
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            At Impact Design Associates, design is not just about buildings —
+            it’s about shaping experiences, enhancing lifestyles, and building a
+            better future.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="bg-gray-50 py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ x: -40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
+              src="/images/founder.jpg" // replace with founder's actual photo path
+              alt="Founder"
+              className="w-full h-auto rounded-2xl shadow-lg object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ x: 40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-3xl font-bold text-blue-700 mb-4">
+              Meet Our Founder
+            </h3>
+            <h4 className="text-xl font-semibold text-gray-800 mb-4">
+              Ar. Hares Siddiqui — Founder & Principal Architect
+            </h4>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              With a vision to redefine modern architecture in Aurangabad and
+              beyond, Ar. Hares Siddiqui established Impact Design Associates with a
+              passion for sustainable, functional, and timeless design. His
+              expertise spans residential, healthcare, and institutional
+              architecture, where he has consistently delivered innovative
+              solutions tailored to client needs.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              As the driving force behind the practice, he leads with creativity,
+              precision, and a commitment to excellence, ensuring that every
+              project reflects both purpose and beauty.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* About Section - Vertical Stack */}
       <section className="max-w-5xl mx-auto py-24 px-6 flex flex-col gap-16">
         {aboutItems.map((item, index) => (
@@ -135,11 +220,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            {/* <img
-              src="/illustrations/vision-graphic.svg"
-              alt="Vision Illustration"
-              className="w-full rounded-xl shadow-lg"
-            /> */}
+            {/* Optional Illustration */}
           </motion.div>
         </div>
       </section>

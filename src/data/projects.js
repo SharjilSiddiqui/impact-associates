@@ -79,7 +79,7 @@ const projects = [
     slug: "sunrise-elite",
     name: "Sunrise Elite",
     category: "Residential",
-    size: "25,000 sq ft",
+    size: "20,000 sq ft",
     date: "2026",
     location:
       "Opp. Kohinoor Lawns, Beside Green Valley, Rauza Bagh, Aurangabad",
