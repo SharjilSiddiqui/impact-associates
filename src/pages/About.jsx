@@ -132,7 +132,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
           >
             <img
-              src="/images/founder.jpg" // replace with founder's actual photo path
+              src="/src/assets/founder.jpeg" // replace with founder's actual photo path
               alt="Founder"
               className="w-full h-auto rounded-2xl shadow-lg object-cover"
             />
@@ -243,7 +243,7 @@ const About = () => {
             innovation to bring bold ideas to life.
           </p>
           <Link to="/contact">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform cursor-pointer">
               Get in Touch
             </button>
           </Link>

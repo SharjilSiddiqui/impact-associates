@@ -203,7 +203,7 @@ const Services = () => {
             <li>✓ Trusted expertise and on-time delivery</li>
           </ul>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ x: 40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -214,7 +214,7 @@ const Services = () => {
             alt="Architecture Features"
             className="w-full rounded-xl shadow-lg"
           />
-        </motion.div>
+        </motion.div> */}
       </section>
 
       {/* CTA Section */}

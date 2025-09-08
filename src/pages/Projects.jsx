@@ -276,7 +276,7 @@ const Projects = () => {
           </p>
           <Link to="/contact">
             <motion.button
-              className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-blue-600 px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+              className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-blue-600 px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105 font-semibold text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
